@@ -4,7 +4,7 @@
         "username": "o57f5oeu832jjuq0",
         "password": "eepkoxoq51dt2nea",
         "database": "pckrwa43q88yyqo9",
-        "host": "127.0.0.1",
+        "host": "bbj31ma8tye2kagi.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
         "port": 3306,
         "dialect": "mysql"
     }
