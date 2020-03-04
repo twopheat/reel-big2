@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://kit.fontawesome.com/028a09fec6.js" crossorigin="anonymous"></script>
+    <script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDOpL4ut22yVDXSPOcY6AiqvoHuX_Auah4&libraries=visualization">
+        </script>
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="icon" type="image/png" href="assets/img/socialRBA1lined.png">
+
+
+
+    <script src="https://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <script src="assets/js/index.js"></script>
+    <!-- <script src="assets/js/markers.js"></script> -->
+</head>
+
+<body>
+    <img class="center" width="100%" height="auto" src="assets/img/small-lake.png" id="lake-img"
+        style="display:none;" />
+    <nav>
+        <div class="nav-wrapper rbared center">
+            <a href="index.html" class="brand-logo center"><img id="toppagelogo" src="assets/img/newLOGO2020.png" alt=""
+                    height="86" width="322">
+            </a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <!-- <li><a href="sass.html">Sass</a></li>
+            <li><a href="badges.html">Components</a></li>
+            <li><a href="collapsible.html">JavaScript</a></li> -->
+            </ul>
+        </div>
+    </nav>
+
+    <div class="row">
+        <!-- Google Maps Container -->
+        <div class="center z-depth-2" id="googleMap" style="width:100%;height:400px;"></div>
+        <div class="container">
+            <div class="row">
+                <div id="hookspot" class="col s2 m2">
+                    <!-- Submit Button  -->
+                    <img class="center " width="100px" height="100px" src="assets/img/hookreal1024.png" id="catchBtn" type="button">
+                    
+                </div>
+                <div id="catchModal" class="modal1 modal">
+                    <div class="modal-content">
+                        <span class="catchclose close">&times;</span>
+                        <div class="container round-7">
+                            <form action="/api/CatchHistory" method="POST">
+                                <label for="fish_type">Fish Type:</label><br>
+                                <input type="text" id="fish_type" name="fish_type"><br>
+                                <label for="rig_type">Rig:</label><br>
+                                <input type="text" id="rig_type" name="rig_type"><br>
+                                <button class="close btn btn-success" id="fishLocationSubmitButton" type="submit">SAVE</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col s3 m3">
+                    </br>
+                    <a class="col s4 m4 offset-s3" id="rigBtn"><img src="assets/img/tacklebox.png" width="100px"></a>
+                </div>
+                <div id="rigModal" class="modal2 modal">
+                    <div class="modal-content">
+                        <span class="rigclose close">&times;</span>
+                        <div class="container round-7">
+                            <form action="/api/Rig" method="POST">
+                                <label for="rig_name">Rig Name:</label><br>
+                                <input type="text" id="rig_name" name="rig_name"><br>
+                                <label for="rod">Rod:</label><br>
+                                <input type="text" id="rod" name="rod"><br>
+                                <label for="reel">Line:</label><br>
+                                <input type="text" id="reel" name="reel"><br>
+                                <label for="tackle">Tackle:</label><br>
+                                <input type="text" id="tackle" name="tackle"><br>
+                                <label for="info">Conditions:</label><br>
+                                <input type="text" id="info" name="info"><br><br>
+                                <button class="close btn btn-success" id="rigBtn" type="submit" value="Save">SAVE</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div id="social" class="center">
+
+
+                    </br>
+                    <div class="col s2 offset-s1">
+
+                        <a class="fab fa-facebook-square" target="_blank"
+                            href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse"></a>
+                    </div>
+
+                    <div class="col s2">
+
+                        <a href="https://twitter.com/intent/tweet?button_hashtag=button&ref_src=twsrc%5Etfw"
+                            class="fab fa-twitter-square" target="_blank" data-show-count="false"></a>
+
+                    </div>
+
+                    <div class="col s2">
+
+                        <a href="http://instagram.com" class="fab fa-instagram" target="_blank"
+                            data-show-count="false"></a>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row card">
+
+            <div class="col colz s3">
+
+                <div class="center listhead rbatan">
+                    <div class="card-content white-text">
+                        <i class="fa fa-fish fa-2x"></i>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col colz s3">
+
+                <div class="center listhead rbatan">
+                    <div class="card-content white-text">
+                        <i class="fas fa-cog fa-2x"></i>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col colz s3">
+
+                <div class="center listhead rbatan">
+                    <div class="card-content white-text">
+                        <i class="fas fa-clock fa-2x"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col colz s3">
+
+                <div class="center listhead rbatan">
+                    <div class="card-content white-text">
+                        <span class="fa fa-map-marker-alt fa-2x"></span>
+                    </div>
+                </div>
+
+            </div>
+            <!--Below is a sample catchlog list-->
+            <div class="row" id="catchlog">
+                <div class="col colz s3">
+
+                    <div class="listhead">
+                        <div class="card-content black-text">
+                            <span>Bass</span>
+                            <div id="fishCatch"></div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="col colz s3">
+
+                    <div class="listhead">
+                        <div class="card-content black-text">
+                            <span>Rig Alpha</span>
+                            <div id="rigCatch"></div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="col colz s3">
+
+                    <div class="listhead">
+                        <div class="card-content black-text">
+                            <span>2/5 5am</span>
+                            <div id="timeCatch"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col colz s3">
+
+                    <div class="listhead">
+                        <div class="card-content black-text">
+                            <span>33 x 45 N</span>
+                            <div id="locCatch"></div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <script>
+        // Get the CATCH modal
+        var modal1 = document.getElementById("catchModal");
+
+        // Get the button that opens the modal
+        var btn = document.getElementById("catchBtn");
+
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("catchclose")[0];
+
+        // When the user clicks the button, open the modal 
+        btn.onclick = function () {
+            modal1.style.display = "block";
+        }
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function () {
+            modal1.style.display = "none";
+        }
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+
+    <script>
+        // Get the RIG modal
+        var modal2 = document.getElementById("rigModal");
+
+        // Get the button that opens the modal
+        var btn = document.getElementById("rigBtn");
+
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("rigclose")[0];
+
+        // When the user clicks the button, open the modal 
+        btn.onclick = function () {
+            modal2.style.display = "block";
+        }
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function () {
+            modal2.style.display = "none";
+        }
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function (event) {
+            if (event.target == modal2) {
+                modal2.style.display = "none";
+            }
+        }
+    </script>
+
+    <!--JavaScript at end of body for optimized loading-->
+
+    <!-- <script type="text/javascript" src="js/materialize.min.js"></script> -->
+
+    <!-- SCRIPTS -->
+    <!-- <script src="./assets/js/markers.js"></script> -->
+    <script src="./assets/js/index.js"></script>
+    <!-- <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+        </script> -->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+        </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+        </script>
+    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+    <script src="assets/js/lake.js"></script>
+
+</body>
+
+</html>
