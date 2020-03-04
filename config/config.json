@@ -1,30 +1,10 @@
 {
     "development":
     {
-        "username": "twopheat",
-        "password": "12121212",
-        "database": "reelbig_db",
-        "host": "127.0.0.1",
-        "port": 3306,
-        "dialect": "mysql"
-    },
-
-    "test":
-    {
-        "username": "root",
-        "password": "03121d3a",
-        "database": "database_test",
-        "host": "127.0.0.1",
-        "port": 3306,
-        "dialect": "mysql"
-    },
-
-    "production":
-    {
-        "username": "root",
-        "password": "03121d3a",
-        "database": "database_production",
-        "host": "127.0.0.1",
+        "username": "o57f5oeu832jjuq0",
+        "password": "eepkoxoq51dt2nea",
+        "database": "xeiuwzdvocg2o426",
+        "host": "bbj31ma8tye2kagi.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
         "port": 3306,
         "dialect": "mysql"
     }
