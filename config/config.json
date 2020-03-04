@@ -1,10 +1,10 @@
 {
     "development":
     {
-        "username": "	vxogdxvek3ogk76a",
-        "password": "wj2x6iw1oakez3mm",
-        "database": "vhbc3ts7ffncj5ms",
-        "host": "wvulqmhjj9tbtc1w.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
+        "username": "twopheat",
+        "password": "12121212",
+        "database": "reelbig_db",
+        "host": "127.0.0.1",
         "port": 3306,
         "dialect": "mysql"
     },
