@@ -1,0 +1,22 @@
+{
+    "short_name": "RBA",
+    "name": "Reel Big App",
+    "description": "Fishing Tracker and Social Sharing",
+    "icons": [
+      {
+        "src": "./public/assets/img/appicon64.png",
+        "type": "image/png",
+        "sizes": "192x192"
+      },
+      {
+        "src": "./public/assets/img/socialRBA1lined.png",
+        "type": "image/png",
+        "sizes": "512x512"
+      }
+    ],
+    "start_url": "/?source=pwa",
+    "background_color": "#fff",
+    "display": "standalone",
+    "scope": "/",
+    "theme_color": "#fff"
+  }
