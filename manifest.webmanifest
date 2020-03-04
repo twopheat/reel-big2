@@ -6,12 +6,12 @@
       {
         "src": "./public/assets/img/appicon64.png",
         "type": "image/png",
-        "sizes": "192x192"
+        "sizes": "64x64"
       },
       {
         "src": "./public/assets/img/socialRBA1lined.png",
         "type": "image/png",
-        "sizes": "512x512"
+        "sizes": "100x100"
       }
     ],
     "start_url": "/?source=pwa",
